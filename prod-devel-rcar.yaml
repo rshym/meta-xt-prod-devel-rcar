@@ -202,7 +202,7 @@ components:
         - "../meta-xt-common/meta-xt-dom0"
         - "../meta-xt-common/meta-xt-control-domain"
         - "../meta-xt-rcar/meta-xt-rcar-dom0"
-        - "../meta-xt-prod-devel-rcar/meta-xt-domx-gen3"
+        - "../meta-xt-prod-devel-rcar/meta-xt-prod-domx"
         - "../meta-xt-prod-devel-rcar/meta-xt-prod-devel-rcar-control"
       build_target: core-image-thin-initramfs
       external_src:
@@ -267,9 +267,9 @@ components:
         - "../meta-xt-rcar/meta-xt-rcar-fixups"
         - "../meta-xt-rcar/meta-xt-rcar-driver-domain"
         - "../meta-xt-rcar/meta-xt-rcar-domx"
-        - "../meta-xt-prod-devel-rcar/meta-xt-domx-gen3"
+        - "../meta-xt-prod-devel-rcar/meta-xt-prod-domx"
         - "../meta-xt-prod-devel-rcar/meta-xt-prod-devel-rcar-driver-domain"
-        - "../meta-xt-prod-devel-rcar/meta-xt-domd-gen3"
+        - "../meta-xt-prod-devel-rcar/meta-xt-prod-domd"
       target_images:
         - "tmp/deploy/images/%{DOMD_MACHINE}/Image"
         - "tmp/deploy/images/%{DOMD_MACHINE}/xen-%{DOMD_MACHINE}.uImage"
@@ -306,7 +306,7 @@ components:
         - "../meta-xt-common/meta-xt-domu"
         - "../meta-xt-rcar/meta-xt-rcar-fixups"
         - "../meta-xt-rcar/meta-xt-rcar-domu"
-        - "../meta-xt-prod-devel-rcar/meta-xt-domu-gen3"
+        - "../meta-xt-prod-devel-rcar/meta-xt-prod-domu"
       target_images:
         - "tmp/deploy/images/%{DOMU_MACHINE}/Image"
         - "tmp/deploy/images/%{DOMU_MACHINE}/core-image-weston-%{DOMU_MACHINE}.ext4"
