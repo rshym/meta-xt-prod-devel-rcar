@@ -43,16 +43,16 @@ common_data:
       rev: kirkstone_patched
     - type: git
       url: "https://git.openembedded.org/meta-openembedded"
-      rev: kirkstone
+      rev: "346753705"
     - type: git
       url: "https://github.com/otyshchenko1/meta-virtualization.git"
-      rev: kirkstone_patched
+      rev: 05b82fc
     - type: git
       url: "https://github.com/svlad-90/meta-xt-common.git"
-      rev: xenvm-trout-dev
+      rev: 82b9da4
     - type: git
       url: "https://github.com/svlad-90/meta-xt-rcar.git"
-      rev: xenvm-trout-dev
+      rev: d5b8e53
   # Common configuration options for all yocto-based domains
   conf: &COMMON_CONF
     - [SSTATE_DIR, "${TOPDIR}/../common_data/sstate"]
@@ -105,10 +105,10 @@ common_data:
   ddk_source_overrides: &DDK_SOURCE_OVERRIDES
     - type: git
       url: "https://git.openembedded.org/meta-python2"
-      rev: kirkstone
+      rev: "f02882e"
     - type: git
       url: "https://github.com/kraj/meta-clang.git"
-      rev: kirkstone
+      rev: "3523149"
     - type: git
       url: "ssh://git@gitpct.epam.com/epmd-aepr/img-proprietary"
       rev: "6ed789681c2867c7cae8b0150e093e1e2781797e"
@@ -132,7 +132,7 @@ components:
       - *COMMON_SOURCES
       - type: git
         url: "https://github.com/dterletskiy/meta-xt-prod-devel-rcar.git"
-        rev: xenvm-trout-dev
+        rev: c77614f
     builder:
       type: yocto
       work_dir: "%{GEN3_DOM0_BUILD_DIR}"
@@ -265,17 +265,17 @@ components:
       - *COMMON_SOURCES
       - type: git
         url: https://github.com/xen-troops/meta-renesas.git
-        rev: "kirkstone-dev-patched"
+        rev: "1f75834"
       - type: git
         url: https://git.yoctoproject.org/meta-selinux
-        rev: kirkstone
+        rev: a401f4b
       - type: git
         url: "https://github.com/dterletskiy/meta-xt-prod-devel-rcar.git"
         rev: xenvm-trout-dev
       - type: git
         #url: ssh://git@github.com/xen-troops/meta-xt-vhost.git
         url: git@github.com:xen-troops/meta-xt-vhost.git
-        rev: main
+        rev: e585c3f
     builder:
       type: yocto
       work_dir: "%{GEN3_DOMD_BUILD_DIR}"
@@ -385,11 +385,11 @@ components:
       - type: git
         url: https://github.com/renesas-rcar/meta-renesas.git
         #rev: "7c29e7bdae360a86fa77ef561e01cc0c18d2e01f"
-        rev: "kirkstone-dev"
+        rev: "4debbfb9"
         dir: "meta-renesas-gen4"
       - type: git
         url: https://github.com/sa-kib/meta-xt-prod-devel-rcar-gen4.git
-        rev: "xenvm-trout-dev+spider"
+        rev: "fd67a7f"
         dir: "meta-xt-prod-devel-rcar-gen4"
 
     builder:
@@ -723,7 +723,7 @@ parameters:
             sources:
               - type: git
                 url: "https://github.com/xen-troops/meta-rcar.git"
-                rev: kirkstone-Yocto-v5.9.0-patched
+                rev: b5eaaaa
             builder:
               layers:
                 - "../../meta-rcar/meta-rcar-gen3-adas"
