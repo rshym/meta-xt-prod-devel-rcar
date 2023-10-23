@@ -48,11 +48,11 @@ common_data:
       url: "https://github.com/otyshchenko1/meta-virtualization.git"
       rev: 05b82fc
     - type: git
-      url: "https://github.com/svlad-90/meta-xt-common.git"
-      rev: 82b9da4
+      url: "https://github.com/rshym/meta-xt-common.git"
+      rev: virtio_demo
     - type: git
-      url: "https://github.com/svlad-90/meta-xt-rcar.git"
-      rev: d5b8e53
+      url: "https://github.com/rshym/meta-xt-rcar.git"
+      rev: virtio_demo
   # Common configuration options for all yocto-based domains
   conf: &COMMON_CONF
     - [SSTATE_DIR, "${TOPDIR}/../common_data/sstate"]
@@ -131,8 +131,8 @@ components:
     sources:
       - *COMMON_SOURCES
       - type: git
-        url: "https://github.com/dterletskiy/meta-xt-prod-devel-rcar.git"
-        rev: c77614f
+        url: "https://github.com/rshym/meta-xt-prod-devel-rcar.git"
+        rev: virtio_demo
     builder:
       type: yocto
       work_dir: "%{GEN3_DOM0_BUILD_DIR}"
@@ -198,8 +198,8 @@ components:
     sources:
       - *COMMON_SOURCES
       - type: git
-        url: "https://github.com/dterletskiy/meta-xt-prod-devel-rcar.git"
-        rev: xenvm-trout-dev
+        url: "https://github.com/rshym/meta-xt-prod-devel-rcar.git"
+        rev: virtio_demo
     builder:
       type: yocto
       work_dir: "%{GEN4_DOM0_BUILD_DIR}"
@@ -270,8 +270,8 @@ components:
         url: https://git.yoctoproject.org/meta-selinux
         rev: a401f4b
       - type: git
-        url: "https://github.com/dterletskiy/meta-xt-prod-devel-rcar.git"
-        rev: xenvm-trout-dev
+        url: "https://github.com/rshym/meta-xt-prod-devel-rcar.git"
+        rev: virtio_demo
       - type: git
         #url: ssh://git@github.com/xen-troops/meta-xt-vhost.git
         url: git@github.com:xen-troops/meta-xt-vhost.git
@@ -377,19 +377,19 @@ components:
         url: https://git.yoctoproject.org/meta-selinux
         rev: kirkstone
       - type: git
-        url: "https://github.com/dterletskiy/meta-xt-prod-devel-rcar.git"
-        rev: xenvm-trout-dev
+        url: "https://github.com/rshym/meta-xt-prod-devel-rcar.git"
+        rev: virtio_demo
       - type: git
         url: git@github.com:xen-troops/meta-xt-vhost.git
         rev: main
       - type: git
-        url: https://github.com/renesas-rcar/meta-renesas.git
+        url: https://github.com/rshym/meta-renesas.git
         #rev: "7c29e7bdae360a86fa77ef561e01cc0c18d2e01f"
-        rev: "4debbfb9"
+        rev: "virtio_demo"
         dir: "meta-renesas-gen4"
       - type: git
-        url: https://github.com/sa-kib/meta-xt-prod-devel-rcar-gen4.git
-        rev: "fd67a7f"
+        url: https://github.com/rshym/meta-xt-prod-devel-rcar-gen4.git
+        rev: "virtio_demo"
         dir: "meta-xt-prod-devel-rcar-gen4"
 
     builder:
