@@ -38,22 +38,22 @@ common_data:
   sources: &COMMON_SOURCES
     - type: git
       url: https://git.yoctoproject.org/poky
-      rev: kirkstone
+      rev: "31751bba1c789f15f574773a659b8017d7bcf440" # kirkstone
     - type: git
       url: https://git.openembedded.org/meta-openembedded
-      rev: kirkstone
+      rev: "8bb16533532b6abc2eded7d9961ab2a108fd7a5b"
     - type: git
       url: https://git.yoctoproject.org/meta-virtualization
-      rev: kirkstone
+      rev: "cb2bc17e96552cdfc141d27bd9f4dbd95a872846"
     - type: git
       url: https://github.com/xen-troops/meta-xt-common.git
-      rev: master
+      rev: v0.1.0
     - type: git
       url: https://github.com/xen-troops/meta-xt-rcar.git
-      rev: master
+      rev: v0.1.0
     - type: git
       url: https://github.com/xen-troops/meta-xt-prod-devel-rcar.git
-      rev: master
+      rev: v0.1.0
   # Common configuration options for all yocto-based domains
   conf: &COMMON_CONF
     - [SSTATE_DIR, "${TOPDIR}/../../../common_data/sstate"]
@@ -128,10 +128,10 @@ common_data:
   gfx_sources: &GFX_SOURCES
     - type: git
       url: https://git.openembedded.org/meta-python2
-      rev: kirkstone
+      rev: "f02882e2aa9279ca7becca8d0cedbffe88b5a253" # kirkstone
     - type: git
       url: https://github.com/kraj/meta-clang.git
-      rev: kirkstone
+      rev: "312ff1c39b1bf5d35c0321e873417eb013cea477" # kirkstone
     - type: git
       url: ssh://git@gitpct.epam.com/epmd-aepr/img-proprietary
       rev: "6ed789681c2867c7cae8b0150e093e1e2781797e"
@@ -207,10 +207,10 @@ components:
       - *COMMON_SOURCES
       - type: git
         url: https://github.com/renesas-rcar/meta-renesas.git
-        rev: kirkstone-dev
+        rev: "11221be7ff3a535f17357bc8ac7e2851d0e8ff02" # kirkstone-dev
       - type: git
         url: https://git.yoctoproject.org/meta-selinux
-        rev: kirkstone
+        rev: "a401f4b2816a0b41ce8d9351542658c721935bcd" # kirkstone
     builder:
       type: yocto
       work_dir: "%{DOMD_BUILD_DIR}"
@@ -267,7 +267,7 @@ components:
       - *COMMON_SOURCES
       - type: git
         url: https://github.com/renesas-rcar/meta-renesas.git
-        rev: kirkstone-dev
+        rev: "11221be7ff3a535f17357bc8ac7e2851d0e8ff02" # kirkstone-dev
     builder:
       type: yocto
       work_dir: "%{DOMU_BUILD_DIR}"
@@ -302,7 +302,7 @@ components:
     sources:
       - type: repo
         url: https://github.com/xen-troops/android_kernel_manifest.git
-        rev: common-android12-5.4-xt-master
+        rev: "558225e69a399afd84a824522a3cfb2ed5b5efe5" # common-android12-5.4-xt-master
         manifest: default.xml
         depth: 1
         groups: "%{XT_DOMA_SOURCE_GROUP}"
@@ -323,7 +323,7 @@ components:
     sources:
       - type: repo
         url: https://github.com/xen-troops/android_manifest.git
-        rev: android-12-master
+        rev: "54c99538db4bf20053052eb861739f29bd592ea8" # android-12-master
         manifest: doma.xml
         depth: 1
         groups: "%{XT_DOMA_SOURCE_GROUP}"
@@ -674,7 +674,7 @@ parameters:
             sources:
               - type: git
                 url: https://github.com/aoscloud/meta-aos
-                rev: main
+                rev: "f011637016c3c7588b19bbc82bd18ea47f5c5061"
             builder:
               layers:
                 - "../meta-aos"
