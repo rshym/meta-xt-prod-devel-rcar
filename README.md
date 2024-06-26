@@ -8,6 +8,7 @@
   - [Requirements](#requirements)
   - [Fetching](#fetching)
   - [Building](#building)
+  - [Build products](#build-products)
   - [Building with prebuilt graphics for DomD+DomU](#building-with-prebuilt-graphics-for-domddomu)
   - [Building with prebuilts Android graphics](#building-with-prebuilts-android-graphics)
     - [Creating SD card image](#creating-sd-card-image)
@@ -70,14 +71,12 @@ Features that are present but not tested:
 
 ## Fetching
 
-You can fetch/clone this whole repository, but you actually need only
-one file from it: `prod-devel-rcar.yaml`. During build `moulin` will
-fetch this repository again into `yocto/` directory. So, to avoid
-possible confusion, we recommend to download only `prod-devel-rcar.yaml`:
-
-```
-# curl -O https://raw.githubusercontent.com/xen-troops/meta-xt-prod-devel-rcar/master/prod-devel-rcar.yaml
-```
+You can clone this whole repository, or download it as an archive.
+During the build few directories will be created and additional
+dependencies will be fetched into them.
+There will be created the build directory `yocto/` for yocto's
+meta-layers, and `zephyr/` and/or `android/` directories,
+depending on the build options.
 
 ## Building
 
@@ -127,6 +126,27 @@ command line: `moulin prod-devel-rcar.yaml --MACHINE
 salvator-xs-h3-4x2g --ENABLE_ANDROID yes`.
 
 This will require even more time and space, as Android is quite big.
+
+## Build products
+
+During the build some interim and final products will appear.
+
+After `moulin prod-devel-rcar.yaml`:
+```
+| buld.ninja
+```
+
+After `ninja full.img`
+```
+| .stamps/
+| .ninja_*
+| yocto/            # Linux-based domains
+  | build_dom?/
+  | <fetched meta layers>/
+| zephyr/           # Zephyr-based domains
+| android_kernel/   # Android kernel
+| android/          # Android
+```
 
 ## Building with prebuilt graphics for DomD+DomU
 
