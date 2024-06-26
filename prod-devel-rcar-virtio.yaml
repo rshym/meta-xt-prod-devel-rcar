@@ -711,7 +711,6 @@ parameters:
             builder:
               layers:
                 - "../meta-aos"
-                - "../meta-xt-prod-devel-rcar/meta-aos-tune"
               conf:
                 - [AOS_VIS_PLUGINS, "telemetryemulatoradapter"]
                 - [DISTRO_FEATURES:append, " vis"]
